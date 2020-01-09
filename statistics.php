@@ -29,9 +29,13 @@ $groups=$mysqli->query($query);
 
 <div class="container">
 	<button type="button" name="logout" onclick="location.href='logout.php'">로그아웃</button>
+<?php if ($_SESSION['admin']=="Y") { ?>
 	<button type="button" name="admin" onclick="location.href='admin.php'">코드 발행</button>
 	<button type="button" name="list" onclick="location.href='list.php'">코드 리스트</button>
-  <center>
+<?php } else { ?>
+	<button type="button" name="use" onclick="location.href='use.php'">코드 사용</button>
+<?php } ?>
+	<center>
   	<h1>쿠폰 코드 통계 페이지</h1>
   	<br />
 <?php while($row = mysqli_fetch_array($groups)) {
