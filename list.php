@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['userid']) || $_SESSION['admin']!="Y")
 {
-	header ('Location: ./login_form.html');
+	header ('Location: ./index.php');
   exit();
 }
 
